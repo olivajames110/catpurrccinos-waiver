@@ -1,0 +1,12 @@
+.waiver-form-container {
+  width: 100%;
+  position: relative;
+  // overflow: hidden;
+  margin-top: 15px;
+  .waiver-form-inner-wrapper {
+    position: relative;
+    max-width: var(--pageMaxWidth);
+    margin: 0 auto;
+    // height: 100vh;
+  }
+}

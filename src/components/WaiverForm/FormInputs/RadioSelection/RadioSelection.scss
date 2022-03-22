@@ -1,0 +1,16 @@
+.radio-selection-wrapper {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  .radio-selection-input-container {
+    margin-bottom: 15px;
+    font-size: 13px;
+    flex-basis: 50%;
+    padding: 0 5px;
+    .radio-selection-input-details {
+      margin-top: -5px;
+      margin-left: 30px;
+      flex: 1 0 50%;
+    }
+  }
+}

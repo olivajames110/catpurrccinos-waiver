@@ -1,0 +1,9 @@
+.form-input-wrapper {
+  margin-bottom: 15px;
+  width: 100%;
+  &:not(:last-child) {
+  }
+  > div {
+    width: 100%;
+  }
+}

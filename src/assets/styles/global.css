@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  background-color: #f2f7fa;
+}
+
+div#root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+:root {
+  --pageMaxWidth: 940px;
+  --inter: "Inter", sans-serif;
+  --jost: "Jost", sans-serif;
+  --script: "Meow Script", cursive;
+  --blue: #1976d2;
+  --blueHover: #3084d7;
+  --gray: #616c70;
+  --red: #cc0000;
+  --graySecondary: #b1b8ba;
+  --progressBarAnimation: 460ms;
+  --progressBarAnimationOffset: 500ms;
+}
+
+button,
+body,
+p,
+input,
+textarea {
+  font-size: 15px;
+  line-height: 1.5rem;
+  font-family: var(--inter);
+}
+
+body,
+p {
+  color: #242526;
+}
+
+h1 {
+  font-family: var(--jost);
+  font-weight: 800;
+}
+
+h2 {
+  font-family: var(--inter);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+h3 {
+  font-family: var(--inter);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  padding: 6px 18px;
+  cursor: pointer;
+  -webkit-transition: 150ms;
+  transition: 150ms;
+  border-radius: 4px;
+}
+
+.primary-button {
+  background-color: var(--blue);
+  color: #ffffff;
+}
+
+.primary-button:hover {
+  background-color: var(--blueHover);
+}
+
+.ghost-button {
+  background-color: #ffffff;
+  color: var(--blue);
+  border: 1px solid var(--blue);
+}
+
+.ghost-button:hover {
+  background-color: #f4f7f8;
+}
+/*# sourceMappingURL=global.css.map */

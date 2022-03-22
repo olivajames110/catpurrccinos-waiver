@@ -1,0 +1,20 @@
+.progress-bar-container {
+  position: relative;
+  margin-top: 15px;
+  max-width: var(--pageMaxWidth);
+  // background-color: #616c7093;
+  width: 100%;
+  padding: 20px 8px;
+  color: #ffff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .progress-bar-container {
+    padding: 20px 10px;
+  }
+}

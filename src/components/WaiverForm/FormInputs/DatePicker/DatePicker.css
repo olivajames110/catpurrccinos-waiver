@@ -1,0 +1,69 @@
+.custom-pseudo-wrapper {
+  position: relative;
+}
+
+.custom-pseudo-wrapper.error {
+  margin-bottom: 35px;
+}
+
+.custom-pseudo-wrapper .select-buttons-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 0.3fr 1fr 0.3fr 1fr;
+      grid-template-columns: 1fr 0.3fr 1fr 0.3fr 1fr;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.custom-pseudo-wrapper .date-separator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.custom-pseudo-wrapper .custom-select {
+  font-size: 14px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.custom-pseudo-wrapper .custom-select em {
+  opacity: 0.5;
+}
+
+.custom-pseudo-wrapper .custom-select fieldset.MuiOutlinedInput-notchedOutline.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border: none !important;
+}
+
+.custom-pseudo-wrapper .custom-select fieldset {
+  border: none !important;
+}
+
+.custom-pseudo-wrapper .custom-select.month svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.MuiSelect-icon {
+  right: 8px !important;
+}
+
+.custom-pseudo-wrapper .custom-select.day svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.MuiSelect-icon {
+  right: 26px !important;
+}
+
+.custom-pseudo-wrapper .custom-select.year svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.MuiSelect-icon {
+  right: 22px !important;
+}
+
+.custom-pseudo-wrapper .MuiFormHelperText-root {
+  color: #d32f2f;
+  position: absolute;
+  bottom: -22px;
+}
+/*# sourceMappingURL=DatePicker.css.map */

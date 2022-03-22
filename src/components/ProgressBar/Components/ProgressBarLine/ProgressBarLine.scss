@@ -1,0 +1,38 @@
+.progress-bar-line-container {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  height: 2px;
+  background-color: var(--graySecondary);
+  z-index: 1;
+
+  &.is-active {
+    // background-color: var(--blue);
+    .line-fill {
+      // background-color: var(--graySecondary);
+      background-color: var(--blue);
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0;
+      // transition: 500ms;
+      animation: lineFill var(--progressBarAnimation) forwards;
+    }
+  }
+}
+
+// .line-fill {
+//   animation: lineFill 500ms reverse;
+// }
+
+@keyframes lineFill {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}

@@ -1,0 +1,55 @@
+.progress-bar-item-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 111;
+  max-width: 240px;
+}
+
+.progress-bar-item-container:not(.last-child) {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.progress-bar-step__circle {
+  background-color: var(--blue);
+  border-color: var(--blue);
+}
+
+@media only screen and (max-width: 600px) {
+  .progress-bar-item-container {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 111;
+    max-width: 80px;
+  }
+}
+
+@-webkit-keyframes circleFill {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes circleFill {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=ProgressBarItem.css.map */

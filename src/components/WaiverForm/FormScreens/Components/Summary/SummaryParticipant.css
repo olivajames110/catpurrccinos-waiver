@@ -1,0 +1,100 @@
+.summary-participant-container {
+  position: relative;
+  padding: 12px;
+  border-radius: 6px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 8px 0;
+}
+
+.summary-participant-container .summary-details {
+  -ms-flex-preferred-size: 400px;
+      flex-basis: 400px;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+}
+
+.summary-participant-container .summary-details .age-type {
+  font-size: 12px;
+  padding: 3px 6px;
+  background-color: #2da9e030;
+  margin-left: 10px;
+  font-weight: normal;
+}
+
+.summary-participant-container .summary-details .summary__title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.summary-participant-container .summary-details .summary__detail-item {
+  font-size: 13px;
+}
+
+.summary-participant-container .summary-signature {
+  position: relative;
+  font-family: var(--script);
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.summary-participant-container .summary-signature .signature {
+  font-size: 36px;
+  line-height: 1.7em;
+}
+
+.summary-participant-container .parent-guardian {
+  font-family: var(--inter);
+  font-size: 12px;
+  top: -10px;
+}
+
+.summary-participant-container.minor {
+  background-color: #f7eccf75;
+}
+
+.summary-participant-container.minor .age-type {
+  background: #c8511230;
+}
+
+@media only screen and (max-width: 600px) {
+  .summary-participant-container .summary-signature {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    font-size: 28px;
+  }
+  .summary-participant-container .summary-signature .parent-guardian {
+    margin-top: 15px;
+  }
+}
+/*# sourceMappingURL=SummaryParticipant.css.map */

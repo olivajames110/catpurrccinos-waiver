@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,sBAAsB,CAAC;EACrB,KAAK,EAAE,IAAI;EACX,QAAQ,EAAE,QAAQ;EAElB,UAAU,EAAE,IAAI;CAOjB;;AAXD,AAKE,sBALoB,CAKpB,0BAA0B,CAAC;EACzB,QAAQ,EAAE,QAAQ;EAClB,SAAS,EAAE,mBAAmB;EAC9B,MAAM,EAAE,MAAM;CAEf",
+    "sources": [
+        "WaiverForm.scss"
+    ],
+    "names": [],
+    "file": "WaiverForm.css"
+}

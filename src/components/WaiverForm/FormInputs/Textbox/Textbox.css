@@ -1,0 +1,13 @@
+.MuiTextField-root {
+  border-color: var(--red) !important;
+}
+
+.MuiTextField-root input {
+  border-color: var(--red) !important;
+  border-radius: 20px;
+}
+
+.MuiTextField-root label {
+  color: rgba(0, 0, 0, 0.392);
+}
+/*# sourceMappingURL=Textbox.css.map */

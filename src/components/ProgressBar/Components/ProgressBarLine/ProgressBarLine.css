@@ -1,0 +1,43 @@
+.progress-bar-line-container {
+  position: absolute;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 2px;
+  background-color: var(--graySecondary);
+  z-index: 1;
+}
+
+.progress-bar-line-container.is-active .line-fill {
+  background-color: var(--blue);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  -webkit-animation: lineFill var(--progressBarAnimation) forwards;
+          animation: lineFill var(--progressBarAnimation) forwards;
+}
+
+@-webkit-keyframes lineFill {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes lineFill {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=ProgressBarLine.css.map */

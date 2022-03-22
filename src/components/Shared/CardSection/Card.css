@@ -1,0 +1,9 @@
+.card-container {
+  background: #ffffff;
+  width: 100%;
+  margin: 15px auto;
+  border-radius: 14px;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1605);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1605);
+}
+/*# sourceMappingURL=Card.css.map */

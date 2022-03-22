@@ -1,0 +1,77 @@
+.participant-radio-selection-wrapper {
+  font-size: 11px;
+  max-width: 250px;
+  margin: 0 auto;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.participant-radio-selection-wrapper .radio-selection-container {
+  position: relative;
+  width: 100%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 60px;
+}
+
+.participant-radio-selection-wrapper .radio-selection-container .radio-selection-grid {
+  position: absolute;
+  padding: 0 20px;
+}
+
+.participant-radio-selection-wrapper .select-wrapper-container {
+  padding: 10px 30px;
+}
+
+.participant-radio-selection-wrapper button.pager-button {
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+  height: 100%;
+  z-index: 111111;
+}
+
+.participant-radio-selection-wrapper button.pager-button.next {
+  right: -12px;
+}
+
+.participant-radio-selection-wrapper button.pager-button.back {
+  left: -12px;
+}
+
+.participant-radio-selection-wrapper button.pager-button svg {
+  height: 15px;
+  fill: #303030;
+}
+
+.participant-radio-selection-wrapper .MuiTypography-root {
+  font-size: 14px;
+  margin-top: -5px;
+}
+
+.participant-radio-selection-wrapper .MuiFormLabel-root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.participant-radio-selection-wrapper .MuiFormControlLabel-root {
+  font-size: 11px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .participant-label {
+    text-align: center;
+  }
+}
+/*# sourceMappingURL=ParticipantRadioSelection.css.map */

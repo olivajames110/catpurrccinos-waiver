@@ -1,0 +1,9 @@
+.signature-electronic-consent-container {
+  position: relative;
+}
+
+.signature-electronic-consent-container .MuiFormControlLabel-label {
+  font-size: 12px;
+  color: #626161;
+}
+/*# sourceMappingURL=SignatureElectronicConsent.css.map */

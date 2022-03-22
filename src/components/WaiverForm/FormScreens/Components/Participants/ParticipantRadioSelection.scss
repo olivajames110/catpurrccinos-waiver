@@ -1,0 +1,65 @@
+.participant-radio-selection-wrapper {
+  font-size: 11px;
+  max-width: 250px;
+  margin: 0 auto;
+  position: relative;
+
+  overflow-x: hidden;
+  .radio-selection-container {
+    position: relative;
+
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    flex-wrap: nowrap;
+    height: 60px;
+    // height: 80px;
+
+    .radio-selection-grid {
+      position: absolute;
+      padding: 0 20px;
+    }
+  }
+  .select-wrapper-container {
+    padding: 10px 30px;
+  }
+  button.pager-button {
+    position: absolute;
+    top: 0;
+    // top: -10px;
+    background-color: #fff;
+    height: 100%;
+    z-index: 111111;
+    &.next {
+      right: -12px;
+    }
+    &.back {
+      left: -12px;
+    }
+    svg {
+      height: 15px;
+      fill: rgb(48, 48, 48);
+    }
+  }
+
+  .MuiTypography-root {
+    font-size: 14px;
+    margin-top: -5px;
+  }
+  .MuiFormLabel-root {
+    display: flex;
+    justify-content: center;
+  }
+  .MuiFormControlLabel-root {
+    font-size: 11px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .participant-label {
+    text-align: center;
+  }
+}

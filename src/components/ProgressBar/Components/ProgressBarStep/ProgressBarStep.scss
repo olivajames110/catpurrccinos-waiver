@@ -1,0 +1,84 @@
+.progress-bar-step-container {
+  position: relative;
+
+  .progress-bar-step__circle {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--graySecondary);
+    background-color: #f8f8f8;
+    z-index: 11;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .icon-wrapper {
+      position: relative;
+      svg {
+        display: block;
+        height: 18px;
+        // fill: var(--gray);
+        fill: var(--graySecondary);
+        &.checkmark {
+          // height: 28px;
+        }
+      }
+    }
+  }
+  &.is-active {
+    .progress-bar-step__circle {
+      // background-color: var(--blue);
+      border-color: var(--blue);
+      transition-delay: var(--progressBarAnimationOffset);
+      .icon-wrapper svg {
+        fill: var(--blue);
+        transition-delay: var(--progressBarAnimationOffset);
+      }
+    }
+    .progress-bar-step__label {
+      transition-delay: var(--progressBarAnimationOffset);
+      color: var(--blue);
+    }
+    svg {
+      fill: var(--blue);
+    }
+  }
+  &.is-completed {
+    .progress-bar-step__circle {
+      background-color: var(--blue);
+      border-color: var(--blue);
+      // transition-delay: 0ms;
+      transition: none;
+      .icon-wrapper svg {
+        fill: #ffffff;
+      }
+    }
+  }
+  .progress-bar-step__label {
+    color: var(--gray);
+    position: absolute;
+    font-size: 12px;
+    width: 200px;
+    left: 50%;
+    font-weight: 600;
+    transform: translateX(-50%);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .progress-bar-step-container {
+    .progress-bar-step__circle {
+      width: 36px;
+      height: 36px;
+      .icon-wrapper {
+        svg {
+          height: 16px;
+        }
+      }
+    }
+    .progress-bar-step__label span {
+      font-size: 9px !important;
+      font-weight: 500;
+    }
+  }
+}

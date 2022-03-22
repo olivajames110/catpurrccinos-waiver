@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,uCAAuC,CAAC;EACtC,QAAQ,EAAE,QAAQ;CAKnB;;AAND,AAEE,uCAFqC,CAErC,0BAA0B,CAAC;EACzB,SAAS,EAAE,IAAI;EACf,KAAK,EAAE,OAAO;CACf",
+    "sources": [
+        "SignatureElectronicConsent.scss"
+    ],
+    "names": [],
+    "file": "SignatureElectronicConsent.css"
+}
