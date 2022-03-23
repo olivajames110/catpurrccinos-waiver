@@ -8,6 +8,7 @@ import { setParticipants } from "../../../redux/actions/waiverParticipantsReduce
 import ParticipantRadioSelection from "./Components/Participants/ParticipantRadioSelection";
 import { increaseFormStep } from "../../../redux/actions/formStepActions";
 import ErrorMessage from "../../Shared/ErrorMessage/ErrorMessage";
+import { getFilteredList } from "../../../utils/helpers/getFilteredList";
 
 const waiverParticipantsInitState = {
   adults: [],
@@ -23,9 +24,8 @@ const Participants = (props) => {
   const dispatch = useDispatch();
 
   //Functions
-
   const nextHandler = () => {
-    if (waiverParticipants.allParticipants.length > 0) {
+    if (waiverParticipants.length > 0) {
       setShowError(false);
       props.onClickNextHandler();
     } else {
@@ -40,17 +40,15 @@ const Participants = (props) => {
       orderNum: index + 1,
     }));
 
-    let fullArray = [...adultArray, ...waiverParticipants.minors];
+    let filteredMinorArray = getFilteredList(
+      waiverParticipants,
+      "isAdult",
+      false
+    );
 
-    let newWaiverParticpants = {
-      ...waiverParticipants,
-      adults: adultArray,
-      allParticipants: fullArray,
-    };
+    let allParticipants = [...adultArray, ...filteredMinorArray];
 
-    console.log("ADULTTT ----- ", newWaiverParticpants);
-    dispatch(setParticipants(newWaiverParticpants));
-    // setNumOfAdults(arr);
+    dispatch(setParticipants(allParticipants));
   };
 
   let minorUpdateHandler = (num) => {
@@ -60,30 +58,16 @@ const Participants = (props) => {
       orderNum: index + 1,
     }));
 
-    let fullArray = [...waiverParticipants.adults, ...minorArray];
+    let filteredAdultArray = getFilteredList(
+      waiverParticipants,
+      "isAdult",
+      true
+    );
 
-    let newWaiverParticpants = {
-      ...waiverParticipants,
-      minors: minorArray,
-      allParticipants: fullArray,
-    };
+    let allParticipants = [...filteredAdultArray, ...minorArray];
 
-    console.log("MINOR ----- ", newWaiverParticpants);
-    dispatch(setParticipants(newWaiverParticpants));
-    // setNumOfMinors(arr);
+    dispatch(setParticipants(allParticipants));
   };
-
-  // useEffect(() => {
-  //   let full = [...numOfAdults, ...numOfMinors];
-  //   let all = {
-  //     adults: numOfAdults,
-  //     minors: numOfMinors,
-  //     allParticipants: full,
-  //   };
-
-  //   // setAllParticipants(all);
-  //   dispatch(setParticipants(all));
-  // }, [numOfAdults, numOfMinors]);
 
   return (
     <FormCard

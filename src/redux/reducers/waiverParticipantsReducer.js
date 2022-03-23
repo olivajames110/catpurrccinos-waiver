@@ -3,13 +3,13 @@ const initState = {
   minors: [],
   allParticipants: [],
 };
-const waiverParticipantsReducer = (state = initState, action) => {
+const waiverParticipantsReducer = (state = [], action) => {
   switch (action.type) {
     case "SET_WAIVER_PARTICIPANTS":
       return action.payload;
 
     case "CLEAR_WAIVER_PARTICIPANTS":
-      return initState;
+      return [];
     default:
       return state;
   }

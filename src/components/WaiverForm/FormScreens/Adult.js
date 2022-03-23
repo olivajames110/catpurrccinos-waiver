@@ -13,6 +13,7 @@ import AdultSignatureConsentSection from "./Components/Adult/AdultSignatureConse
 import AdultSignatureSection from "./Components/Adult/AdultSignatureSection";
 import AdultInfoSection from "./Components/Adult/AdultInfoSection";
 import AdultTestButton from "./Components/Adult/AdultTestButton";
+import { getFilteredList } from "../../../utils/helpers/getFilteredList";
 
 // import './Participants.css'
 
@@ -89,7 +90,7 @@ const Adult = (props) => {
       onClickNext={nextHandler}
       show={props.show}
       orderNum={props.orderNum}
-      totalNum={waiverParticipants.adults.length}
+      totalNum={getFilteredList(waiverParticipants, "isAdult", true).length}
       directionIsToLeft={props.directionIsToLeft}
     >
       <AdultTestButton onClick={setFormState} />

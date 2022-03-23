@@ -12,11 +12,13 @@ const ProgressBar = (props) => {
 
   //Redux
   const currentStep = useSelector((state) => state.formStep);
+  const waiverParticipants = useSelector((state) => state.waiverParticipants);
 
   useEffect(() => {
     if (props.allParticipants.length > 4) {
       setIsCompact(true);
     }
+
     setNumOfAdults(props.adultParticipants.length);
     setNumOfMinors(props.minorParticipants.length);
     setNumOfAllParticipants(props.allParticipants.length);

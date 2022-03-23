@@ -23,6 +23,7 @@ import {
 } from "../../redux/actions/parentGuardianListActions";
 
 import "./WaiverForm.css";
+import { getFilteredList } from "../../utils/helpers/getFilteredList";
 
 const WaiverForm = (props) => {
   //Component state
@@ -31,7 +32,7 @@ const WaiverForm = (props) => {
 
   //Redux
   const currentStep = useSelector((state) => state.formStep);
-  const participants = useSelector((state) => state.waiverParticipants);
+  const waiverParticipants = useSelector((state) => state.waiverParticipants);
   const dispatch = useDispatch();
 
   //Functions
@@ -81,9 +82,17 @@ const WaiverForm = (props) => {
       {currentStep !== 0 && (
         <ProgressBar
           currentStep={currentStep}
-          allParticipants={participants.allParticipants}
-          adultParticipants={participants.adults}
-          minorParticipants={participants.minors}
+          allParticipants={waiverParticipants}
+          adultParticipants={getFilteredList(
+            waiverParticipants,
+            "isAdult",
+            true
+          )}
+          minorParticipants={getFilteredList(
+            waiverParticipants,
+            "isAdult",
+            false
+          )}
           successIsActive={successIsActive}
         />
       )}
@@ -103,9 +112,9 @@ const WaiverForm = (props) => {
 
   const adultAndMinorCards = (
     <>
-      {participants.allParticipants.length > 0 && (
+      {waiverParticipants.length > 0 && (
         <FormScreenCardsContainer
-          allParticipants={participants.allParticipants}
+          allParticipants={waiverParticipants}
           onClickNextHandler={onClickNextHandler}
           onClickBackHandler={onClickBackHandler}
           directionIsToLeft={directionIsToLeft}
@@ -117,9 +126,9 @@ const WaiverForm = (props) => {
   const summaryCard = (
     <>
       <Summary
-        show={currentStep === participants.allParticipants.length + 1}
+        show={currentStep === waiverParticipants.length + 1}
         currentStep={currentStep}
-        numberOfParticipants={participants.allParticipants}
+        numberOfParticipants={waiverParticipants}
         handleNext={submitFormHandler}
         handleBack={onClickBackHandler}
         directionIsToLeft={directionIsToLeft}
@@ -129,22 +138,22 @@ const WaiverForm = (props) => {
   const successCard = (
     <>
       <Success
-        show={currentStep === participants.allParticipants.length + 2}
+        show={currentStep === waiverParticipants.length + 2}
         handleNext={resetHandler}
         directionIsToLeft={directionIsToLeft}
-        numberOfParticipants={participants.allParticipants}
+        numberOfParticipants={waiverParticipants}
       />
     </>
   );
 
   // useEffect(() => {
-  //   if (participants.allParticipants.length >= 1) {
+  //   if (waiverParticipants.length >= 1) {
   //     onClickNextHandler();
   //   }
   // }, [participants]);
 
   useEffect(() => {
-    if (currentStep === 0 && participants.allParticipants.length >= 1) {
+    if (currentStep === 0 && waiverParticipants.length >= 1) {
       resetHandler();
     }
   }, [currentStep]);

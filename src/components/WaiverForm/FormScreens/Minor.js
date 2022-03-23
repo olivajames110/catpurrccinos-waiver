@@ -10,6 +10,7 @@ import ParentGuardianSection from "./Components/Minor/ParentGuardianSection";
 import { useSelector, useDispatch } from "react-redux";
 import { addUser } from "../../../redux/actions/waiverFormStateActions";
 import { addParentGuardian } from "../../../redux/actions/parentGuardianListActions";
+import { getFilteredList } from "../../../utils/helpers/getFilteredList";
 
 const Minor = (props) => {
   //Component state
@@ -141,7 +142,7 @@ const Minor = (props) => {
       show={props.show}
       isAdult={false}
       orderNum={props.orderNum}
-      totalNum={waiverParticipants.minors.length}
+      totalNum={getFilteredList(waiverParticipants, "isAdult", false).length}
       onClickBack={backButtonHandler}
       onClickNext={nextButtonHandler}
       directionIsToLeft={props.directionIsToLeft}
