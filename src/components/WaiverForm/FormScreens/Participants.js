@@ -3,9 +3,11 @@ import { Grid, Box } from "@mui/material";
 import TextOverflow from "../../Shared/TextOverflow/TextOverflow";
 import FormCard from "../FormCard/FormCard";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setParticipants } from "../../../redux/actions/waiverParticipantsReducerActions";
 import ParticipantRadioSelection from "./Components/Participants/ParticipantRadioSelection";
+import { increaseFormStep } from "../../../redux/actions/formStepActions";
+import ErrorMessage from "../../Shared/ErrorMessage/ErrorMessage";
 
 const waiverParticipantsInitState = {
   adults: [],
@@ -14,48 +16,75 @@ const waiverParticipantsInitState = {
 };
 const Participants = (props) => {
   //Component state
-  const [numOfAdults, setNumOfAdults] = useState([]);
-  const [numOfMinors, setNumOfMinors] = useState([]);
-  const [allParticipants, setAllParticipants] = useState(
-    waiverParticipantsInitState
-  );
+  const [showError, setShowError] = useState(false);
 
   //Redux
+  const waiverParticipants = useSelector((state) => state.waiverParticipants);
   const dispatch = useDispatch();
 
   //Functions
+
   const nextHandler = () => {
-    dispatch(setParticipants(allParticipants));
+    if (waiverParticipants.allParticipants.length > 0) {
+      setShowError(false);
+      props.onClickNextHandler();
+    } else {
+      setShowError(true);
+    }
   };
 
   let adultUpdateHandler = (num) => {
     let number = Number(num);
-    let arr = [...Array(number)].map((el, index) => ({
+    let adultArray = [...Array(number)].map((el, index) => ({
       isAdult: true,
       orderNum: index + 1,
     }));
-    setNumOfAdults(arr);
+
+    let fullArray = [...adultArray, ...waiverParticipants.minors];
+
+    let newWaiverParticpants = {
+      ...waiverParticipants,
+      adults: adultArray,
+      allParticipants: fullArray,
+    };
+
+    console.log("ADULTTT ----- ", newWaiverParticpants);
+    dispatch(setParticipants(newWaiverParticpants));
+    // setNumOfAdults(arr);
   };
 
   let minorUpdateHandler = (num) => {
     let number = Number(num);
-    let arr = [...Array(number)].map((el, index) => ({
+    let minorArray = [...Array(number)].map((el, index) => ({
       isAdult: false,
       orderNum: index + 1,
     }));
-    setNumOfMinors(arr);
-  };
 
-  useEffect(() => {
-    let full = [...numOfAdults, ...numOfMinors];
-    let all = {
-      adults: numOfAdults,
-      minors: numOfMinors,
-      allParticipants: full,
+    let fullArray = [...waiverParticipants.adults, ...minorArray];
+
+    let newWaiverParticpants = {
+      ...waiverParticipants,
+      minors: minorArray,
+      allParticipants: fullArray,
     };
 
-    setAllParticipants(all);
-  }, [numOfAdults, numOfMinors]);
+    console.log("MINOR ----- ", newWaiverParticpants);
+    dispatch(setParticipants(newWaiverParticpants));
+    // setNumOfMinors(arr);
+  };
+
+  // useEffect(() => {
+  //   let full = [...numOfAdults, ...numOfMinors];
+  //   let all = {
+  //     adults: numOfAdults,
+  //     minors: numOfMinors,
+  //     allParticipants: full,
+  //   };
+
+  //   // setAllParticipants(all);
+  //   dispatch(setParticipants(all));
+  // }, [numOfAdults, numOfMinors]);
+
   return (
     <FormCard
       title="Participants"
@@ -231,6 +260,9 @@ const Participants = (props) => {
           />
         </Grid>
       </Grid>
+      {showError && (
+        <ErrorMessage text={"Please choose the number of Adults and Minors"} />
+      )}
     </FormCard>
   );
 };

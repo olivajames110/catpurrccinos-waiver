@@ -39,6 +39,8 @@ const WaiverForm = (props) => {
     if (!directionIsToLeft) {
       setDirectionIsToLeft(true);
     }
+
+    console.log("Next");
     dispatch(increaseFormStep());
     document.querySelector("#root").scrollTo(0, 0);
   };
@@ -93,8 +95,7 @@ const WaiverForm = (props) => {
       <Participants
         show={currentStep === 0}
         currentStep={currentStep}
-        handleNext={onClickNextHandler}
-        handleBack={onClickBackHandler}
+        onClickNextHandler={onClickNextHandler}
         directionIsToLeft={directionIsToLeft}
       />
     </>
@@ -136,11 +137,17 @@ const WaiverForm = (props) => {
     </>
   );
 
+  // useEffect(() => {
+  //   if (participants.allParticipants.length >= 1) {
+  //     onClickNextHandler();
+  //   }
+  // }, [participants]);
+
   useEffect(() => {
-    if (participants.allParticipants.length >= 1) {
-      onClickNextHandler();
+    if (currentStep === 0 && participants.allParticipants.length >= 1) {
+      resetHandler();
     }
-  }, [participants]);
+  }, [currentStep]);
 
   return (
     <>
