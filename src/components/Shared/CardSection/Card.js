@@ -1,6 +1,6 @@
 import React from "react";
 import "./Card.css";
-import "../../../assets/styles/transitionAnimations/leftRight.css";
+import "../../../assets/styles/transitionAnimations/leftRight/leftRight.css";
 import { CSSTransition } from "react-transition-group";
 const Card = (props) => {
   return (

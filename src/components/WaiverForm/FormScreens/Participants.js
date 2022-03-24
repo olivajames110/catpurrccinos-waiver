@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Grid, Box } from "@mui/material";
 import TextOverflow from "../../Shared/TextOverflow/TextOverflow";
 import FormCard from "../FormCard/FormCard";
@@ -6,15 +6,9 @@ import FormCard from "../FormCard/FormCard";
 import { useDispatch, useSelector } from "react-redux";
 import { setParticipants } from "../../../redux/actions/waiverParticipantsReducerActions";
 import ParticipantRadioSelection from "./Components/Participants/ParticipantRadioSelection";
-import { increaseFormStep } from "../../../redux/actions/formStepActions";
 import ErrorMessage from "../../Shared/ErrorMessage/ErrorMessage";
 import { getFilteredList } from "../../../utils/helpers/getFilteredList";
 
-const waiverParticipantsInitState = {
-  adults: [],
-  minors: [],
-  allParticipants: [],
-};
 const Participants = (props) => {
   //Component state
   const [showError, setShowError] = useState(false);

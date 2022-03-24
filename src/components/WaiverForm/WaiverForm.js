@@ -79,23 +79,18 @@ const WaiverForm = (props) => {
   //Waiver Cards -- Not sure if best way of organizing
   const progressBar = (
     <>
-      {currentStep !== 0 && (
-        <ProgressBar
-          currentStep={currentStep}
-          allParticipants={waiverParticipants}
-          adultParticipants={getFilteredList(
-            waiverParticipants,
-            "isAdult",
-            true
-          )}
-          minorParticipants={getFilteredList(
-            waiverParticipants,
-            "isAdult",
-            false
-          )}
-          successIsActive={successIsActive}
-        />
-      )}
+      <ProgressBar
+        show={currentStep !== 0}
+        currentStep={currentStep}
+        allParticipants={waiverParticipants}
+        adultParticipants={getFilteredList(waiverParticipants, "isAdult", true)}
+        minorParticipants={getFilteredList(
+          waiverParticipants,
+          "isAdult",
+          false
+        )}
+        successIsActive={successIsActive}
+      />
     </>
   );
 
@@ -145,12 +140,6 @@ const WaiverForm = (props) => {
       />
     </>
   );
-
-  // useEffect(() => {
-  //   if (waiverParticipants.length >= 1) {
-  //     onClickNextHandler();
-  //   }
-  // }, [participants]);
 
   useEffect(() => {
     if (currentStep === 0 && waiverParticipants.length >= 1) {

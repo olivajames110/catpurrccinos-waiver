@@ -9,7 +9,7 @@ import {
   FormLabel,
 } from "@mui/material";
 import { CSSTransition } from "react-transition-group";
-import "../../../../../assets/styles/transitionAnimations/leftRight.css";
+import "../../../../../assets/styles/transitionAnimations/leftRight/leftRight.css";
 import "./ParticipantRadioSelection.css";
 
 const ParticipantRadioSelection = (props) => {
